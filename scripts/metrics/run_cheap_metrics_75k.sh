@@ -28,4 +28,4 @@ python scripts/metrics/compute_sq2_bertscore_75k.py \
   --batch-size 16 \
   --chunk-size 512
 
-echo "Done."
+echo "Cheap metrics complete."
