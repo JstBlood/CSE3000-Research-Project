@@ -1,0 +1,109 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# Virtual environments
+# =========================
+.env
+.venv/
+venv/
+env/
+rp-results-env/
+*/rp-results-env/
+
+# =========================
+# IDE / editor files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# Hugging Face / model caches
+# =========================
+.cache/
+huggingface/
+transformers_cache/
+hf_cache/
+tokenizers_cache/
+
+# =========================
+# Model weights and large ML artifacts
+# =========================
+models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+*.onnx
+
+# =========================
+# Conda / package environments
+# =========================
+conda-meta/
+site-packages/
+node_modules/
+
+# =========================
+# Temporary / scratch files
+# =========================
+tmp/
+temp/
+scratch/
+debug/
+*.tmp
+*.bak
+*.backup
+
+# =========================
+# Broken or obsolete experiment outputs
+# =========================
+*_BROKEN_THINK_*/
+*_ARCHIVE_BEFORE_V3_*/
+repo_quarantine_broken_generation_*/
+generation_BROKEN_THINK/
+cheap_metrics_75k_POSSIBLY_BROKEN/
+
+# =========================
+# Large compressed archives
+# =========================
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+
+# =========================
+# Local transfer leftovers
+# =========================
+rsync-partial/
+*.part
+*.partial
+
+# =========================
+# Do NOT ignore final research outputs
+# =========================
+# Keep JSONL, CSV, PDF, PNG, TXT, MD, SLURM, OUT, and ERR files trackable.
+# The final repo should include result JSONL files, figures, prompts, scripts, and Slurm logs.
