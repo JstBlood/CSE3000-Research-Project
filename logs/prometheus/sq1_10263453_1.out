@@ -1,0 +1,55 @@
+SQ1 chunk 0000
+Input: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/chunks/sq1/chunk_0000.jsonl
+Output: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/outputs/sq1/chunk_0000_judged.jsonl
+Model: /scratch/mberzins/models/prometheus-7b-v2.0
+Fri Jun 19 17:24:08 CEST 2026
+Task: sq1
+Input rows: 400
+Already done in output: 208
+Output: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/outputs/sq1/chunk_0000_judged.jsonl
+Loading tokenizer: /scratch/mberzins/models/prometheus-7b-v2.0
+Loading Prometheus model in 4-bit: /scratch/mberzins/models/prometheus-7b-v2.0
+Computed prior score preferences.
+processed_new=5 skipped=208 row_index=213/400 last_expected=2.947 last_hard=3.0
+processed_new=10 skipped=208 row_index=218/400 last_expected=2.846 last_hard=2.0
+processed_new=15 skipped=208 row_index=223/400 last_expected=2.772 last_hard=1.0
+processed_new=20 skipped=208 row_index=228/400 last_expected=2.833 last_hard=2.0
+processed_new=25 skipped=208 row_index=233/400 last_expected=2.904 last_hard=2.0
+processed_new=30 skipped=208 row_index=238/400 last_expected=2.741 last_hard=2.0
+processed_new=35 skipped=208 row_index=243/400 last_expected=2.854 last_hard=3.0
+processed_new=40 skipped=208 row_index=248/400 last_expected=2.717 last_hard=1.0
+processed_new=45 skipped=208 row_index=253/400 last_expected=2.647 last_hard=1.0
+processed_new=50 skipped=208 row_index=258/400 last_expected=2.892 last_hard=2.0
+processed_new=55 skipped=208 row_index=263/400 last_expected=2.805 last_hard=2.0
+processed_new=60 skipped=208 row_index=268/400 last_expected=2.683 last_hard=1.0
+processed_new=65 skipped=208 row_index=273/400 last_expected=2.623 last_hard=1.0
+processed_new=70 skipped=208 row_index=278/400 last_expected=2.653 last_hard=1.0
+processed_new=75 skipped=208 row_index=283/400 last_expected=2.761 last_hard=1.0
+processed_new=80 skipped=208 row_index=288/400 last_expected=3.216 last_hard=4.0
+processed_new=85 skipped=208 row_index=293/400 last_expected=3.039 last_hard=3.0
+processed_new=90 skipped=208 row_index=298/400 last_expected=2.931 last_hard=3.0
+processed_new=95 skipped=208 row_index=303/400 last_expected=2.630 last_hard=1.0
+processed_new=100 skipped=208 row_index=308/400 last_expected=2.622 last_hard=1.0
+processed_new=105 skipped=208 row_index=313/400 last_expected=2.898 last_hard=2.0
+processed_new=110 skipped=208 row_index=318/400 last_expected=2.959 last_hard=3.0
+processed_new=115 skipped=208 row_index=323/400 last_expected=2.850 last_hard=2.0
+processed_new=120 skipped=208 row_index=328/400 last_expected=2.703 last_hard=1.0
+processed_new=125 skipped=208 row_index=333/400 last_expected=3.013 last_hard=4.0
+processed_new=130 skipped=208 row_index=338/400 last_expected=2.635 last_hard=1.0
+processed_new=135 skipped=208 row_index=343/400 last_expected=2.583 last_hard=1.0
+processed_new=140 skipped=208 row_index=348/400 last_expected=3.001 last_hard=4.0
+processed_new=145 skipped=208 row_index=353/400 last_expected=2.779 last_hard=1.0
+processed_new=150 skipped=208 row_index=358/400 last_expected=2.827 last_hard=2.0
+processed_new=155 skipped=208 row_index=363/400 last_expected=2.848 last_hard=2.0
+processed_new=160 skipped=208 row_index=368/400 last_expected=2.789 last_hard=1.0
+processed_new=165 skipped=208 row_index=373/400 last_expected=2.741 last_hard=2.0
+processed_new=170 skipped=208 row_index=378/400 last_expected=2.854 last_hard=2.0
+processed_new=175 skipped=208 row_index=383/400 last_expected=2.598 last_hard=1.0
+processed_new=180 skipped=208 row_index=388/400 last_expected=2.783 last_hard=2.0
+processed_new=185 skipped=208 row_index=393/400 last_expected=2.836 last_hard=2.0
+processed_new=190 skipped=208 row_index=398/400 last_expected=2.648 last_hard=1.0
+DONE
+processed_new=192
+skipped=208
+output=/scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/outputs/sq1/chunk_0000_judged.jsonl
+Fri Jun 19 18:37:21 CEST 2026

@@ -1,0 +1,4 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights:   0%|          | 1/320 [00:03<17:41,  3.33s/it]Loading weights:  11%|█         | 35/320 [00:03<00:20, 14.04it/s]Loading weights:  16%|█▌        | 50/320 [00:03<00:13, 20.60it/s]Loading weights:  46%|████▌     | 147/320 [00:03<00:02, 86.36it/s]Loading weights:  70%|██████▉   | 223/320 [00:03<00:00, 136.54it/s]Loading weights:  83%|████████▎ | 266/320 [00:04<00:00, 110.43it/s]Loading weights: 100%|██████████| 320/320 [00:04<00:00, 69.80it/s] 
+slurmstepd: error: *** JOB 10243965 ON gpu020 CANCELLED AT 2026-06-19T00:22:24 DUE TO TIME LIMIT ***

@@ -1,0 +1,15 @@
+Starting generation run 1
+Output file: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/gen_run_01/descriptions.jsonl
+Seed: 1001
+Sat Jun 20 16:37:15 CEST 2026
+Loading tokenizer: /scratch/mberzins/models/Qwen3.5-2B
+Loading model: /scratch/mberzins/models/Qwen3.5-2B
+DONE
+processed_samples=5000
+generated=0
+skipped_done=15000
+skipped_missing=0
+bad_outputs=0
+chat_template_used_count=0
+Finished generation run 1
+Sat Jun 20 16:43:46 CEST 2026

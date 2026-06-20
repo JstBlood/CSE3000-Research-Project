@@ -1,0 +1,51 @@
+# SQ1 Prometheus Cross-Representation Judge Prompt
+
+This prompt evaluates semantic similarity between two generated descriptions of the same program from different input representations. It uses a feedback-first design: Prometheus first writes brief rubric-based feedback without assigning a score, and the script then computes calibrated constrained likelihoods over decimal scores from 1.0 to 5.0.
+
+## SQ1 Base Rubric Prompt
+
+###Task:
+Rate the semantic similarity of two generated high-level program behaviour descriptions for the same program.
+
+###Description A:
+<description A>
+
+###Description B:
+<description B>
+
+###Evaluation focus:
+Compare the described program behaviour, not exact wording.
+Consider whether both descriptions describe the same main action, affected object, condition, input/output, and effect.
+Relevant behaviours may include file operations, registry access, process creation, service handling, networking, memory or string manipulation, configuration handling, cleanup, or control-flow behaviour.
+Do not penalize harmless paraphrasing.
+Penalize changed behaviour, missing main behaviour, unsupported extra behaviour, contradictions, and overly generic descriptions.
+Use the full 1.0--5.0 scale. Choose the score that best reflects the rubric, using one decimal place when the quality falls between two rubric levels.
+
+###Rubric:
+1.0 = Different behaviour: the descriptions are unrelated, contradictory, or describe different main actions.
+2.0 = Weak overlap: the descriptions share a small topic or object, but the main behaviour or effect is different.
+3.0 = Partial similarity: the descriptions describe related behaviour, but one misses or changes an important action, condition, object, or effect.
+4.0 = Mostly equivalent: the descriptions describe the same main behaviour, with only minor missing details or harmless abstraction differences.
+5.0 = Equivalent: the descriptions express the same behaviour, including the main action and important effect, with no meaningful contradiction or unsupported extra behaviour.
+
+## SQ1 Feedback Prompt
+
+###Instruction:
+Write brief feedback explaining the comparison according to the rubric.
+Mention only the most important reason for the score.
+Do not give a numeric score yet.
+Do not add information not present in the descriptions.
+
+Feedback:
+
+## SQ1 Score Prompt
+
+###Feedback:
+<judge feedback>
+
+###Instruction:
+Based on the rubric and feedback, choose one numeric score from 1.0 to 5.0.
+The score may use at most one decimal place.
+Return only the score.
+
+[RESULT]

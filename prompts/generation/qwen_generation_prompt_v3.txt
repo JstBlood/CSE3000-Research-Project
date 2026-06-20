@@ -1,0 +1,24 @@
+You will be given one program representation. The representation may be source code, assembly code, or binary/disassembly text.
+
+Task:
+Write one concise natural-language description of what the program or function does.
+
+Strict output rules:
+- Return only the final description.
+- Do not include reasoning, analysis, explanations, bullet points, labels, or extra text.
+- Do not output <think>, Thinking Process, or any hidden reasoning.
+- One sentence only.
+- Start with "The code" or "The function" when appropriate.
+- Describe the main high-level behaviour, not the implementation line by line.
+- Focus on actions such as file operations, registry access, process creation, service handling, networking, memory/string manipulation, configuration handling, or control-flow behaviour.
+- Include important conditions when they affect the behaviour, for example: if a file exists, if a registry key is missing, if a process is found, or if an input is invalid.
+- Mention important effects, such as creating files, writing registry values, downloading files, starting processes, modifying strings, allocating memory, or cleaning up resources.
+- Do not over-generalize if a more specific behaviour is supported by the input.
+- Do not describe irrelevant low-level details such as register names, stack offsets, temporary variables, addresses, labels, or compiler artifacts.
+- Do not classify the program as malware, benign, suspicious, safe, harmful, or malicious.
+- Do not mention the representation type.
+- Do not invent behaviour that is not supported by the input.
+- If the exact purpose is unclear, give the most specific cautious description supported by the code, using wording such as "appears to" only when necessary.
+
+Program input:
+{representation_text}

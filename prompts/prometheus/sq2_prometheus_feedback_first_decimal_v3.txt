@@ -1,0 +1,53 @@
+# SQ2 Prometheus Reference-Alignment Judge Prompt
+
+This prompt evaluates how well a generated program behaviour description matches the SBAN natural-language reference description. The resulting score is interpreted as reference alignment, not independently verified behavioural correctness. It uses the same feedback-first decimal scoring procedure as SQ1.
+
+## SQ2 Base Rubric Prompt
+
+###Task:
+Rate how well a generated program behaviour description matches a reference program behaviour description.
+
+###Generated description:
+<generated description>
+
+###Reference description:
+<reference NLD>
+
+###Evaluation focus:
+Use the reference description as the grading target.
+Compare program behaviour, not exact wording.
+Check whether the generated description captures the same main action, affected object, condition, input/output, and effect as the reference.
+Relevant behaviours may include file operations, registry access, process creation, service handling, networking, memory or string manipulation, configuration handling, cleanup, or control-flow behaviour.
+Do not penalize harmless paraphrasing.
+Penalize missing important behaviour, changed behaviour, unsupported added behaviour, contradictions, and overly generic descriptions.
+Do not reward a description for being plausible if the behaviour is not supported by the reference.
+Use the full 1.0--5.0 scale. Choose the score that best reflects the rubric, using one decimal place when the quality falls between two rubric levels.
+
+###Rubric:
+1.0 = Incorrect: unrelated, contradictory, meaningless, or describes a different main behaviour than the reference.
+2.0 = Weak match: mentions a similar topic or object, but misses or changes the main action or effect.
+3.0 = Partial match: captures part of the reference behaviour, but omits, adds, or changes an important action, condition, object, or effect.
+4.0 = Mostly correct: captures the main reference behaviour, with only minor omissions, harmless abstraction, or small wording differences.
+5.0 = Equivalent: semantically matches the reference behaviour, including the main action and important effect, with no unsupported additions or contradictions.
+
+## SQ2 Feedback Prompt
+
+###Instruction:
+Write brief feedback explaining the comparison according to the rubric.
+Mention only the most important reason for the score.
+Do not give a numeric score yet.
+Do not add information not present in the descriptions.
+
+Feedback:
+
+## SQ2 Score Prompt
+
+###Feedback:
+<judge feedback>
+
+###Instruction:
+Based on the rubric and feedback, choose one numeric score from 1.0 to 5.0.
+The score may use at most one decimal place.
+Return only the score.
+
+[RESULT]

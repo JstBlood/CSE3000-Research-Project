@@ -1,0 +1,5 @@
+SQ1 chunk 0000
+Input: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/chunks/sq1/chunk_0000.jsonl
+Output: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/outputs/sq1/chunk_0000_judged.jsonl
+Model: /scratch/mberzins/models/prometheus-7b-v2.0
+Fri Jun 19 17:21:08 CEST 2026

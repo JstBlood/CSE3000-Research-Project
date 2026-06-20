@@ -1,0 +1,97 @@
+SQ2 chunk 0000
+Input: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/chunks/sq2/chunk_0000.jsonl
+Output: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/outputs/sq2/chunk_0000_judged.jsonl
+Model: /scratch/mberzins/models/prometheus-7b-v2.0
+Sat Jun 20 03:37:00 CEST 2026
+Task: sq2
+Input rows: 400
+Already done in output: 0
+Output: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/outputs/sq2/chunk_0000_judged.jsonl
+Loading tokenizer: /scratch/mberzins/models/prometheus-7b-v2.0
+Loading Prometheus model in 4-bit: /scratch/mberzins/models/prometheus-7b-v2.0
+Computed prior score preferences.
+processed_new=5 skipped=0 row_index=5/400 last_expected=3.060 last_hard=3.0
+processed_new=10 skipped=0 row_index=10/400 last_expected=2.696 last_hard=1.0
+processed_new=15 skipped=0 row_index=15/400 last_expected=2.571 last_hard=1.0
+processed_new=20 skipped=0 row_index=20/400 last_expected=2.666 last_hard=1.0
+processed_new=25 skipped=0 row_index=25/400 last_expected=2.689 last_hard=2.0
+processed_new=30 skipped=0 row_index=30/400 last_expected=3.322 last_hard=4.0
+processed_new=35 skipped=0 row_index=35/400 last_expected=2.742 last_hard=1.0
+processed_new=40 skipped=0 row_index=40/400 last_expected=2.698 last_hard=1.0
+processed_new=45 skipped=0 row_index=45/400 last_expected=3.222 last_hard=4.0
+processed_new=50 skipped=0 row_index=50/400 last_expected=2.749 last_hard=1.0
+processed_new=55 skipped=0 row_index=55/400 last_expected=2.708 last_hard=1.0
+processed_new=60 skipped=0 row_index=60/400 last_expected=3.163 last_hard=3.0
+processed_new=65 skipped=0 row_index=65/400 last_expected=2.705 last_hard=1.0
+processed_new=70 skipped=0 row_index=70/400 last_expected=2.772 last_hard=2.0
+processed_new=75 skipped=0 row_index=75/400 last_expected=2.864 last_hard=2.0
+processed_new=80 skipped=0 row_index=80/400 last_expected=2.745 last_hard=1.0
+processed_new=85 skipped=0 row_index=85/400 last_expected=2.541 last_hard=1.0
+processed_new=90 skipped=0 row_index=90/400 last_expected=3.180 last_hard=3.0
+processed_new=95 skipped=0 row_index=95/400 last_expected=2.981 last_hard=3.0
+processed_new=100 skipped=0 row_index=100/400 last_expected=2.682 last_hard=1.0
+processed_new=105 skipped=0 row_index=105/400 last_expected=2.712 last_hard=1.0
+processed_new=110 skipped=0 row_index=110/400 last_expected=2.662 last_hard=1.0
+processed_new=115 skipped=0 row_index=115/400 last_expected=2.686 last_hard=1.0
+processed_new=120 skipped=0 row_index=120/400 last_expected=3.102 last_hard=3.0
+processed_new=125 skipped=0 row_index=125/400 last_expected=2.792 last_hard=2.0
+processed_new=130 skipped=0 row_index=130/400 last_expected=2.748 last_hard=1.0
+processed_new=135 skipped=0 row_index=135/400 last_expected=2.584 last_hard=1.0
+processed_new=140 skipped=0 row_index=140/400 last_expected=3.375 last_hard=4.0
+processed_new=145 skipped=0 row_index=145/400 last_expected=2.590 last_hard=1.0
+processed_new=150 skipped=0 row_index=150/400 last_expected=3.356 last_hard=4.0
+processed_new=155 skipped=0 row_index=155/400 last_expected=2.758 last_hard=2.0
+processed_new=160 skipped=0 row_index=160/400 last_expected=2.782 last_hard=1.0
+processed_new=165 skipped=0 row_index=165/400 last_expected=2.725 last_hard=2.0
+processed_new=170 skipped=0 row_index=170/400 last_expected=2.772 last_hard=2.0
+processed_new=175 skipped=0 row_index=175/400 last_expected=2.778 last_hard=1.0
+processed_new=180 skipped=0 row_index=180/400 last_expected=3.057 last_hard=3.0
+processed_new=185 skipped=0 row_index=185/400 last_expected=3.144 last_hard=3.0
+processed_new=190 skipped=0 row_index=190/400 last_expected=3.140 last_hard=4.0
+processed_new=195 skipped=0 row_index=195/400 last_expected=3.112 last_hard=3.0
+processed_new=200 skipped=0 row_index=200/400 last_expected=2.781 last_hard=2.0
+processed_new=205 skipped=0 row_index=205/400 last_expected=2.715 last_hard=1.0
+processed_new=210 skipped=0 row_index=210/400 last_expected=2.735 last_hard=2.0
+processed_new=215 skipped=0 row_index=215/400 last_expected=3.181 last_hard=3.0
+processed_new=220 skipped=0 row_index=220/400 last_expected=3.082 last_hard=3.0
+processed_new=225 skipped=0 row_index=225/400 last_expected=3.199 last_hard=3.0
+processed_new=230 skipped=0 row_index=230/400 last_expected=2.689 last_hard=1.0
+processed_new=235 skipped=0 row_index=235/400 last_expected=2.795 last_hard=2.0
+processed_new=240 skipped=0 row_index=240/400 last_expected=2.906 last_hard=2.0
+processed_new=245 skipped=0 row_index=245/400 last_expected=3.302 last_hard=4.0
+processed_new=250 skipped=0 row_index=250/400 last_expected=3.170 last_hard=3.0
+processed_new=255 skipped=0 row_index=255/400 last_expected=3.085 last_hard=3.0
+processed_new=260 skipped=0 row_index=260/400 last_expected=3.291 last_hard=4.0
+processed_new=265 skipped=0 row_index=265/400 last_expected=2.609 last_hard=1.0
+processed_new=270 skipped=0 row_index=270/400 last_expected=2.902 last_hard=2.0
+processed_new=275 skipped=0 row_index=275/400 last_expected=3.183 last_hard=3.0
+processed_new=280 skipped=0 row_index=280/400 last_expected=2.618 last_hard=1.0
+processed_new=285 skipped=0 row_index=285/400 last_expected=3.183 last_hard=3.0
+processed_new=290 skipped=0 row_index=290/400 last_expected=2.952 last_hard=3.0
+processed_new=295 skipped=0 row_index=295/400 last_expected=3.151 last_hard=3.0
+processed_new=300 skipped=0 row_index=300/400 last_expected=2.688 last_hard=2.0
+processed_new=305 skipped=0 row_index=305/400 last_expected=2.915 last_hard=2.0
+processed_new=310 skipped=0 row_index=310/400 last_expected=3.247 last_hard=3.0
+processed_new=315 skipped=0 row_index=315/400 last_expected=3.193 last_hard=3.0
+processed_new=320 skipped=0 row_index=320/400 last_expected=3.214 last_hard=3.0
+processed_new=325 skipped=0 row_index=325/400 last_expected=2.879 last_hard=2.0
+processed_new=330 skipped=0 row_index=330/400 last_expected=3.245 last_hard=3.0
+processed_new=335 skipped=0 row_index=335/400 last_expected=3.238 last_hard=3.0
+processed_new=340 skipped=0 row_index=340/400 last_expected=3.269 last_hard=3.0
+processed_new=345 skipped=0 row_index=345/400 last_expected=3.271 last_hard=4.0
+processed_new=350 skipped=0 row_index=350/400 last_expected=3.216 last_hard=4.0
+processed_new=355 skipped=0 row_index=355/400 last_expected=2.710 last_hard=1.0
+processed_new=360 skipped=0 row_index=360/400 last_expected=3.309 last_hard=4.0
+processed_new=365 skipped=0 row_index=365/400 last_expected=2.789 last_hard=2.0
+processed_new=370 skipped=0 row_index=370/400 last_expected=2.773 last_hard=1.0
+processed_new=375 skipped=0 row_index=375/400 last_expected=3.168 last_hard=3.0
+processed_new=380 skipped=0 row_index=380/400 last_expected=3.094 last_hard=3.0
+processed_new=385 skipped=0 row_index=385/400 last_expected=3.023 last_hard=3.0
+processed_new=390 skipped=0 row_index=390/400 last_expected=3.147 last_hard=3.0
+processed_new=395 skipped=0 row_index=395/400 last_expected=3.049 last_hard=3.0
+processed_new=400 skipped=0 row_index=400/400 last_expected=2.654 last_hard=1.0
+DONE
+processed_new=400
+skipped=0
+output=/scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/prometheus_600sample_gen_run_01_v3/outputs/sq2/chunk_0000_judged.jsonl
+Sat Jun 20 06:12:55 CEST 2026

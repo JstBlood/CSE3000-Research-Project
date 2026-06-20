@@ -1,0 +1,21 @@
+Starting generation run 2
+Output file: /scratch/mberzins/results/bodmas_5000_qwen35_2b_promptv2_5runs/gen_run_02/descriptions.jsonl
+Seed: 1002
+Fri Jun 19 15:29:03 CEST 2026
+Loading tokenizer: /scratch/mberzins/models/Qwen3.5-2B
+Loading model: /scratch/mberzins/models/Qwen3.5-2B
+generated=25 processed_samples=3105 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=50 processed_samples=3113 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=75 processed_samples=3121 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=100 processed_samples=3130 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=125 processed_samples=3138 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=150 processed_samples=3146 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=175 processed_samples=3155 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=200 processed_samples=3163 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=225 processed_samples=3171 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=250 processed_samples=3180 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=275 processed_samples=3188 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=300 processed_samples=3196 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=325 processed_samples=3205 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=350 processed_samples=3213 skipped_done=9288 skipped_missing=0 bad_outputs=0
+generated=375 processed_samples=3221 skipped_done=9288 skipped_missing=0 bad_outputs=0
