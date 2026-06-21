@@ -1,5 +1,14 @@
-numpy
+# Python dependencies for the local metric and plotting stage (scripts/metrics/).
+# Install with:
+#   python -m pip install -r requirements-metrics.txt
+#
+# These cover SQ1 cheap metrics (cosine + ROUGE-L), SQ2 BERTScore,
+# the Friedman test, and all boxplot scripts. ROUGE-L is implemented
+# directly (longest-common-subsequence F1), so no rouge package is needed,
+# and the Friedman test is computed without SciPy.
+
 pandas
+numpy
 matplotlib
 tqdm
 torch

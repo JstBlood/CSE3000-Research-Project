@@ -102,9 +102,3 @@ cheap_metrics_75k_POSSIBLY_BROKEN/
 rsync-partial/
 *.part
 *.partial
-
-# =========================
-# Do NOT ignore final research outputs
-# =========================
-# Keep JSONL, CSV, PDF, PNG, TXT, MD, SLURM, OUT, and ERR files trackable.
-# The final repo should include result JSONL files, figures, prompts, scripts, and Slurm logs.

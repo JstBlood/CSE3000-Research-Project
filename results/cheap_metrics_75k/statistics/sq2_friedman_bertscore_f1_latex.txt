@@ -1,0 +1,2 @@
+% Copy-paste values for the paper:
+\(\chi^2(2) = 5456.91\), \(p = <0.001\), \(N = 5000\), \(W = 0.5457\).

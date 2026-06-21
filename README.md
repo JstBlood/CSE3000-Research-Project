@@ -50,11 +50,16 @@ The intended interpretation is practical: if an LLM describes the same program d
 │   │   ├── setup_prometheus_gen01_v3.sh
 │   │   ├── judge_sq1_600sample_v3.slurm
 │   │   └── judge_sq2_600sample_v3.slurm
-│   ├── metrics/
-│   │   └── compute_and_plot_cheap_metrics_75k.py
-│   └── validation/
-│       ├── validate_final_repo.py
-│       └── check_final_scripts_and_prompts.py
+│   └── metrics/
+│       ├── compute_sq1_cheap_metrics_75k.py
+│       ├── compute_sq2_bertscore_75k.py
+│       ├── compute_sq2_friedman_test.py
+│       ├── plot_sq1_combined_boxplots.py
+│       ├── plot_prometheus_sq1_boxplots.py
+│       ├── plot_prometheus_sq2_boxplots.py
+│       ├── run_cheap_metrics_75k.sh
+│       ├── run_sq1_combined_boxplot.sh
+│       └── run_prometheus_boxplots.sh
 ├── results/
 │   ├── generation/
 │   │   ├── gen_run_01/descriptions.jsonl
@@ -484,57 +489,215 @@ Replace <net-id> or <your-path> variables with the relevant DelftBlue account na
 
 ---
 
-## 11. Run Cheap Metrics and Plots Locally
+## 11. Run Metric Scripts Locally
 
-Create a local environment:
+Run these commands on your local machine after transferring the final DelftBlue outputs into the repository.
+
+Create and activate a local metrics environment:
 
 ```bash
 cd "<your-path>"
 
-python3 -m venv rp-results-env
-source rp-results-env/bin/activate
+python3 -m venv .venv-metrics
+source .venv-metrics/bin/activate
 
 python -m pip install --upgrade pip
+python -m pip install -r requirements-metrics.txt
+```
+
+If `requirements-metrics.txt` is not available, install the required packages directly:
+
+```bash
 python -m pip install \
   pandas \
   numpy \
-  scipy \
   matplotlib \
-  sentence-transformers \
-  bert-score \
-  rouge-score \
+  tqdm \
   torch \
-  transformers
+  transformers \
+  sentence-transformers \
+  bert-score
 ```
 
-Run the metrics script:
+The metric scripts expect the final generation outputs in:
+
+```text
+results/generation/gen_run_01/descriptions.jsonl
+results/generation/gen_run_02/descriptions.jsonl
+results/generation/gen_run_03/descriptions.jsonl
+results/generation/gen_run_04/descriptions.jsonl
+results/generation/gen_run_05/descriptions.jsonl
+```
+
+The Prometheus plotting scripts expect the merged judge outputs in:
+
+```text
+results/prometheus_600sample_gen_run_01_v3/sq1_prometheus_judge_scores_decimal_600sample_gen_run_01_v3.jsonl
+results/prometheus_600sample_gen_run_01_v3/sq2_prometheus_reference_judge_scores_decimal_600sample_gen_run_01_v3.jsonl
+```
+
+### SQ1 Cheap Metrics
+
+Compute cross-representation consistency metrics over all five generation runs:
 
 ```bash
-export RUNS_ROOT="<your-path>/results/generation"
-export OUT_DIR="<your-path>/results/cheap_metrics_75k"
-
-python scripts/metrics/compute_and_plot_cheap_metrics_75k.py
+python scripts/metrics/compute_sq1_cheap_metrics_75k.py
 ```
 
-The metric script computes:
+This computes:
 
 ```text
 SQ1:
 - sentence-transformer cosine similarity
 - ROUGE-L
+```
 
+Outputs:
+
+```text
+results/cheap_metrics_75k/sq1_cheap_metrics_all_runs.csv
+results/cheap_metrics_75k/sq1_cheap_metrics_mean_over_runs.csv
+results/cheap_metrics_75k/sq1_cheap_metrics_summary_by_pair.csv
+results/figures/sq1_cheap_metric_boxplots_mean_over_runs.pdf
+results/figures/sq1_cheap_metric_boxplots_mean_over_runs.png
+```
+
+### SQ2 Cheap Metrics
+
+Compute reference-based BERTScore metrics over all five generation runs:
+
+```bash
+python scripts/metrics/compute_sq2_bertscore_75k.py
+```
+
+This computes:
+
+```text
 SQ2:
 - BERTScore precision
 - BERTScore recall
 - BERTScore F1
 ```
 
-Figures and summary files should be written to:
+Outputs:
 
 ```text
-results/cheap_metrics_75k/
-results/figures/
+results/cheap_metrics_75k/sq2_bertscore_all_runs.csv
+results/cheap_metrics_75k/sq2_bertscore_mean_over_runs.csv
+results/cheap_metrics_75k/sq2_bertscore_summary_by_representation.csv
+results/figures/sq2_bertscore_boxplots_mean_over_runs.pdf
+results/figures/sq2_bertscore_boxplots_mean_over_runs.png
 ```
+
+If BERTScore fails on Apple Silicon/MPS, run it on CPU:
+
+```bash
+python scripts/metrics/compute_sq2_bertscore_75k.py --device cpu
+```
+
+### Run Both Cheap Metric Scripts
+
+To run SQ1 and SQ2 cheap metrics in sequence:
+
+```bash
+./scripts/metrics/run_cheap_metrics_75k.sh
+```
+
+### Prometheus Boxplots
+
+The Prometheus judge scores are already produced on DelftBlue. Locally, run the plotting scripts to create summary CSV files and boxplots:
+
+```bash
+./scripts/metrics/run_prometheus_boxplots.sh
+```
+
+Equivalent individual commands:
+
+```bash
+python scripts/metrics/plot_prometheus_sq1_boxplots.py
+python scripts/metrics/plot_prometheus_sq2_boxplots.py
+```
+
+Outputs:
+
+```text
+results/prometheus_600sample_gen_run_01_v3/summary/sq1_prometheus_summary_by_pair.csv
+results/prometheus_600sample_gen_run_01_v3/summary/sq2_prometheus_summary_by_representation.csv
+results/figures/sq1_prometheus_score_expected_by_pair_boxplot.pdf
+results/figures/sq1_prometheus_score_expected_by_pair_boxplot.png
+results/figures/sq2_prometheus_score_expected_by_representation_boxplot.pdf
+results/figures/sq2_prometheus_score_expected_by_representation_boxplot.png
+```
+
+### SQ1 Combined Boxplot
+
+Create the single combined SQ1 figure used in the paper, showing sentence-transformer cosine similarity, ROUGE-L F1, and the Prometheus expected score side by side:
+
+```bash
+./scripts/metrics/run_sq1_combined_boxplot.sh
+```
+
+Equivalent direct command:
+
+```bash
+python scripts/metrics/plot_sq1_combined_boxplots.py
+```
+
+Inputs:
+
+```text
+results/cheap_metrics_75k/sq1_cheap_metrics_mean_over_runs.csv
+results/prometheus_600sample_gen_run_01_v3/sq1_prometheus_judge_scores_decimal_600sample_gen_run_01_v3.jsonl
+```
+
+Outputs:
+
+```text
+results/figures/sq1_combined_metric_boxplots.pdf
+results/figures/sq1_combined_metric_boxplots.png
+```
+
+### SQ2 Friedman Test
+
+Compute the Friedman test for SQ2 BERTScore F1 across the binary, assembly, and source representations. The script has no SciPy dependency and prints the chi-square statistic, p-value, Kendall's W effect size, and per-representation mean ranks, as well as a copy-paste LaTeX line for the paper:
+
+```bash
+python scripts/metrics/compute_sq2_friedman_test.py
+```
+
+Input:
+
+```text
+results/cheap_metrics_75k/sq2_bertscore_mean_over_runs.csv
+```
+
+Outputs:
+
+```text
+results/cheap_metrics_75k/statistics/sq2_friedman_bertscore_f1_summary.csv
+results/cheap_metrics_75k/statistics/sq2_friedman_bertscore_f1.json
+results/cheap_metrics_75k/statistics/sq2_friedman_bertscore_f1_latex.txt
+```
+
+---
+
+## Plotting and Statistics Scripts Summary
+
+All figures and statistics in the paper are produced by the following scripts and bash wrappers in `scripts/metrics/`:
+
+| Script | Type | Produces |
+| --- | --- | --- |
+| `compute_sq1_cheap_metrics_75k.py` | Python | SQ1 cosine + ROUGE-L CSVs and the SQ1 cheap-metric boxplots |
+| `compute_sq2_bertscore_75k.py` | Python | SQ2 BERTScore CSVs and the SQ2 BERTScore boxplots |
+| `compute_sq2_friedman_test.py` | Python | SQ2 Friedman test summary/JSON/LaTeX statistics |
+| `plot_sq1_combined_boxplots.py` | Python | Combined SQ1 figure (cosine, ROUGE-L, Prometheus) |
+| `plot_prometheus_sq1_boxplots.py` | Python | Prometheus SQ1 summary CSV and boxplot |
+| `plot_prometheus_sq2_boxplots.py` | Python | Prometheus SQ2 summary CSV and boxplot |
+| `run_cheap_metrics_75k.sh` | Bash | Runs both SQ1 and SQ2 cheap-metric scripts in sequence |
+| `run_sq1_combined_boxplot.sh` | Bash | Runs the combined SQ1 boxplot script |
+| `run_prometheus_boxplots.sh` | Bash | Runs both Prometheus boxplot scripts |
+
+---
 
 ## Important Exclusions
 

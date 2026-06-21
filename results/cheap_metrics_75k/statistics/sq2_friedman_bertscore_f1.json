@@ -1,0 +1,19 @@
+{
+  "n_complete_samples": 5000,
+  "k_representations": 3,
+  "df": 2,
+  "friedman_chi2": 5456.9136,
+  "p_value": 0.0,
+  "kendalls_w": 0.54569136,
+  "mean_ranks": {
+    "binary": 1.2196,
+    "assembly": 2.092,
+    "source": 2.6884
+  },
+  "input_csv": "results/cheap_metrics_75k/sq2_bertscore_mean_over_runs.csv",
+  "sample_col": "sample_id",
+  "representation_col": "representation",
+  "metric_col": "bertscore_f1",
+  "dropped_rows_with_missing_values": 0,
+  "incomplete_samples_dropped": 0
+}
