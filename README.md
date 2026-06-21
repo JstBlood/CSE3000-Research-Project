@@ -710,3 +710,9 @@ This repository intentionally excludes:
 - temporary scratch folders
 
 The repository keeps final scripts, prompts, Slurm files, logs, generated descriptions, metric outputs, and figures.
+
+---
+
+## License
+
+The original material in this repository (source code, scripts, prompts, plotting code, and the text of the accompanying paper) is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). See the [`LICENSE`](LICENSE) file for details. In short, you may share and adapt the material, including commercially, as long as you give appropriate credit.
